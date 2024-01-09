@@ -10,5 +10,5 @@ else:
     data[1]['sections'][i]['Chapter']['content'] = re.sub(r'^((?<!\\)(?:\\\\)*)\$\$', '\g<1>\\\\\\\\[', data[1]['sections'][i]['Chapter']['content'], flags=re.MULTILINE)
     data[1]['sections'][i]['Chapter']['content'] = re.sub(r'((?<!\\)(?:\\\\)*)\$\$$', '\g<1>\\\\\\\\]', data[1]['sections'][i]['Chapter']['content'], flags=re.MULTILINE)
   for i in range(len(data[1]['sections'])):
-    data[1]['sections'][i]['Chapter']['content'] = re.sub(r'((?<!\\)(?:\\\\)*)\$(.+)((?<!\\)(?:\\\\)*)\$', r'\g<1>\\\\\(\g<2>\\\\\)\g<3>', data[1]['sections'][i]['Chapter']['content'])
+    data[1]['sections'][i]['Chapter']['content'] = re.sub(r'((?<!\\)(?:\\\\)*)\$(.+?)((?<!\\)(?:\\\\)*)\$', r'\g<1>\\\\\(\g<2>\\\\\)\g<3>', data[1]['sections'][i]['Chapter']['content'])
   print(json.dumps(data[1]))
